@@ -14,13 +14,47 @@ bazel_dep(
     version = "0.28.0",
 )
 
+erlang_package = use_extension(
+    "@rules_erlang//bzlmod:extensions.bzl",
+    "erlang_package",
+)
 
-# erlang_package = use_extension(
-#     "@rules_erlang//bzlmod:extensions.bzl",
-#     "erlang_package",
-# )
+erlang_package.hex_package(
+    name = "acceptor_pool",
+    version = "1.0.0",
+    build_file = "@grpcbox//:bazel/BUILD.acceptor_pool",
+)
 
+erlang_package.hex_package(
+    name = "chatterbox",
+    pkg = "ts_chatterbox",
+    version = "0.13.0",
+    build_file = "@grpcbox//:bazel/BUILD.chatterbox",
+)
 
-# use_repo(
-#     erlang_package,
-# )
+erlang_package.hex_package(
+    name = "ctx",
+    version = "0.6.0",
+    build_file = "@grpcbox//:bazel/BUILD.ctx",
+)
+
+erlang_package.hex_package(
+    name = "gproc",
+    version = "0.8.0",
+    build_file = "@grpcbox//:bazel/BUILD.gproc",
+)
+
+erlang_package.hex_package(
+    name = "hpack",
+    pkg = "hpack_erl",
+    version = "0.2.3",
+    build_file = "@grpcbox//:bazel/BUILD.hpack",
+)
+
+use_repo(
+    erlang_package,
+    "acceptor_pool",
+    "chatterbox",
+    "ctx",
+    "gproc",
+)

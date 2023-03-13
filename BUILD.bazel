@@ -6,3 +6,15 @@ gazelle(
     data = GAZELLE_ERLANG_RUNTIME_DEPS,
     gazelle = "@rules_erlang//gazelle:gazelle_erlang_binary",
 )
+
+gazelle(
+    name = "gazelle-update-repos",
+    command = "update-repos",
+    data = GAZELLE_ERLANG_RUNTIME_DEPS,
+    extra_args = [
+        "--verbose",
+        "--build_files_dir=bazel",
+        "--recurse_with=gazelle-update-repos",
+    ],
+    gazelle = "@rules_erlang//gazelle:gazelle_erlang_binary",
+)
