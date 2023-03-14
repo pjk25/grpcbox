@@ -58,3 +58,45 @@ use_repo(
     "ctx",
     "gproc",
 )
+
+erlang_dev_package = use_extension(
+    "@rules_erlang//bzlmod:extensions.bzl",
+    "erlang_package",
+    dev_dependency = True,
+)
+
+erlang_dev_package.hex_package(
+    name = "counters",
+    version = "0.2.1",
+    build_file = "@grpcbox//:bazel/BUILD.counters",
+)
+
+erlang_dev_package.hex_package(
+    name = "jsx",
+    version = "3.1.0",
+    build_file = "@grpcbox//:bazel/BUILD.jsx",
+)
+
+erlang_dev_package.hex_package(
+    name = "opencensus",
+    version = "0.9.3",
+    build_file = "@grpcbox//:bazel/BUILD.opencensus",
+)
+
+erlang_dev_package.hex_package(
+    name = "rfc3339",
+    version = "0.9.0",
+    build_file = "@grpcbox//:bazel/BUILD.rfc3339",
+)
+
+erlang_dev_package.hex_package(
+    name = "wts",
+    version = "0.3.0",
+    build_file = "@grpcbox//:bazel/BUILD.wts",
+)
+
+use_repo(
+    erlang_dev_package,
+    "jsx",
+    "opencensus",
+)

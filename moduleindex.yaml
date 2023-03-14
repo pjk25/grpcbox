@@ -25,6 +25,15 @@ chatterbox:
 - h2_stream
 - h2_stream_set
 - sock
+counters:
+- counters_boolean
+- counters_counter
+- counters_distribution
+- counters_simple
+- counters_sum
+- counters_app
+- counters_buckets
+- counters_sup
 ctx:
 - ctx
 gproc:
@@ -46,3 +55,59 @@ hpack:
 - hpack_integer
 - hpack_string
 - huffman
+jsx:
+- jsx
+- jsx_config
+- jsx_consult
+- jsx_decoder
+- jsx_encoder
+- jsx_parser
+- jsx_to_json
+- jsx_to_term
+- jsx_verify
+opencensus:
+- oc_producer
+- oc_producer_registry
+- oc_propagation_binary
+- oc_propagation_http_b3
+- oc_propagation_http_tracecontext
+- oc_reporter
+- oc_reporter_pid
+- oc_reporter_stdout
+- oc_sampler
+- oc_sampler_always
+- oc_sampler_impl
+- oc_sampler_never
+- oc_sampler_period_or_count
+- oc_sampler_probability
+- oc_self_producer
+- oc_server
+- oc_span
+- oc_span_sweeper
+- oc_span_transform
+- oc_stat
+- oc_stat_aggregation
+- oc_stat_aggregation_count
+- oc_stat_aggregation_distribution
+- oc_stat_aggregation_latest
+- oc_stat_aggregation_sum
+- oc_stat_config
+- oc_stat_exporter
+- oc_stat_exporter_stdout
+- oc_stat_measure
+- oc_stat_transform
+- oc_stat_unit
+- oc_stat_view
+- oc_tag_ctx_binary
+- oc_tag_ctx_header
+- oc_tags
+- oc_trace
+- oc_tracestate
+- ocp
+- opencensus
+- opencensus_app
+- opencensus_sup
+rfc3339:
+- rfc3339
+wts:
+- wts
